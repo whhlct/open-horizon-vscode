@@ -18,8 +18,12 @@ export function activate(context: vscode.ExtensionContext) {
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from OpenHorizon!');
 	});
-
+	// The command has been defined in the package.json file
+	let printTime = vscode.commands.registerCommand('openhorizon.printTime', () => {
+		vscode.window.showInformationMessage('Print Time!');
+	})
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(printTime);
 }
 
 // This method is called when your extension is deactivated

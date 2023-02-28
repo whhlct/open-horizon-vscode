@@ -16,6 +16,10 @@
       {
         "command": "openhorizon.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "openhorizon.printTime",
+        "title": "Print Time"
       }
     ]
   },
