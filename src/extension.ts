@@ -20,7 +20,17 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 	// The command has been defined in the package.json file
 	let printTime = vscode.commands.registerCommand('openhorizon.printTime', () => {
-		vscode.window.showInformationMessage('Print Time!');
+		const currentTime = new Date();
+		let config = vscode.workspace.getConfiguration();
+		// let localeTime:boolean = config.get('printLocaleTime');
+		
+		if (config.get('openhorizon.printLocaleTime') == true) {
+			vscode.window.showInformationMessage(currentTime.toLocaleTimeString());
+		} else {
+			vscode.window.showInformationMessage(currentTime.toTimeString());
+		}
+		// vscode.window.showInformationMessage();
+		// vscode.window.showInformationMessage(currentTime.toTimeString());
 	})
 	context.subscriptions.push(disposable);
 	context.subscriptions.push(printTime);

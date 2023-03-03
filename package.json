@@ -12,6 +12,18 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration":[
+      {
+        "title": "OpenHorizon",
+        "properties": {
+          "openhorizon.printLocaleTime": {
+            "type": "boolean",
+            "default": "true",
+            "description": "Whether openhorizon.printTime prints the time with full format."
+          }
+        }
+      }
+    ],
     "commands": [
       {
         "command": "openhorizon.helloWorld",
